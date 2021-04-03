@@ -84,23 +84,23 @@ export const createLogger = (
   formatModuleName: (moduleName: string) => string = (moduleName) =>
     kleur.bgWhite().black(pad(moduleName, 1))
 ) => {
-  let logLevel: LOG_LEVEL = initialLogLevel
+  let scopedLogLevel: LOG_LEVEL = initialLogLevel
 
   const moduleTag = moduleName === '' ? '' : `${formatModuleName(moduleName)}`
 
-  const logger = (logType: AvailableLogTypes, message: string) => {
-    const { level = -1, prefix, format } = logTypes.get(logType) ?? {}
+  const logger = (logLevel: AvailableLogTypes, message: string) => {
+    const { level = -1, prefix, format } = logTypes.get(logLevel) ?? {}
 
-    if (logLevel >= level) {
+    if (scopedLogLevel >= level) {
       console.log(`${moduleTag}${prefix!}${format!(message)}`)
     }
   }
 
   logger.setLogLevel = (level: LOG_LEVEL) => {
-    logLevel = level
+    scopedLogLevel = level
   }
 
-  logger.getLogLevel = () => logLevel
+  logger.getLogLevel = () => scopedLogLevel
 
   return logger
 }
