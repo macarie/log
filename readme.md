@@ -125,6 +125,35 @@ A numeric [`enum`](https://www.typescriptlang.org/docs/handbook/enums.html) with
 
 A [`logger`](#loggerloglevel-message) with no _scope_ applied. You should use this one as a global logger.
 
+## More Examples
+
+Using the global logger:
+
+```javascript
+// Log's default log level is `LOG_LEVEL.INFO`.
+import { log } from "@macarie/log"
+
+// This will be logged
+log("info", "Info")
+
+// This won't be logged
+log("verbose", "Verbose")
+```
+
+Setting the global logger's log level:
+
+```javascript
+import { log, LOG_LEVEL } from "@macarie/log"
+
+log.setLogLevel(LOG_LEVEL.VERBOSE)
+
+// This will be logged
+log("info", "Info")
+
+// Now this will also be logged
+log("verbose", "Verbose")
+```
+
 ## License
 
 MIT © [Raul Macarie](https://macarie.me).
