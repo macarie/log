@@ -1,4 +1,4 @@
-# 🍕 [@macarie/log](https://github.com/macarie/log) [![Release Version](https://img.shields.io/npm/v/macarie/log?label=&color=0080FF)](https://www.npmjs.com/package/@macarie/log)
+# 🍕 [@macarie/log](https://github.com/macarie/log) [![Release Version](https://img.shields.io/npm/v/@macarie/log?label=&color=0080FF)](https://www.npmjs.com/package/@macarie/log)
 
 > A dead-simple logger
 
