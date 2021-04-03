@@ -1,0 +1,61 @@
+{
+  "name": "@macarie/log",
+  "version": "0.1.0",
+  "description": "A dead-simple logger",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "compile:clean": "rimraf dist",
+    "compile:declaration": "tsc --emitdeclarationonly",
+    "compile:transpile": "esbuild --sourcemap --platform=node --target=esnext --outdir=dist src/**.ts",
+    "compile:library": "run-p -s compile:declaration compile:transpile",
+    "compile": "run-s -s compile:clean compile:library",
+    "lint:tsc": "tsc --noemit",
+    "lint:xo": "xo",
+    "lint": "run-p -s lint:*"
+  },
+  "engines": {
+		"node": ">=12"
+	},
+  "files": [
+    "./dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macarie/log.git"
+  },
+  "author": {
+    "name": "Raul Macarie",
+    "email": "raul@macarie.me",
+    "url": "https://macarie.me"
+  },
+  "bugs": {
+    "url": "https://github.com/macarie/log/issues"
+  },
+  "homepage": "https://github.com/macarie/log#readme",
+  "dependencies": {
+    "kleur": "^4.1.4"
+  },
+  "devDependencies": {
+    "esbuild": "^0.9.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.1.3",
+    "xo": "^0.37.1"
+  },
+  "xo": {
+    "prettier": true
+  },
+  "prettier": {
+    "semi": false,
+    "bracketSpacing": true,
+    "useTabs": false,
+    "endOfLine": "lf",
+    "trailingComma": "es5"
+  }
+}
