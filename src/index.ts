@@ -1,6 +1,7 @@
 import kleur from 'kleur'
 
 export enum LOG_LEVEL {
+  OFF,
   ERROR,
   WARN,
   SUCCESS,
