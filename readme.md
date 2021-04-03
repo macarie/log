@@ -42,9 +42,9 @@ log("debug", "Debug")
 
 ### createLogger(moduleName, initialLogLevel?, formatModuleName?)
 
-Returns: [`logger`](<(#loggerlogtype-message)>)
+Returns: [`logger`](#loggerloglevel-message)
 
-Creates and returns a [_scoped_ `logger`](#loggerlogtype-message): this means that it's possible to set its log level independently.
+Creates and returns a [_scoped_ `logger`](#loggerloglevel-message): this means that it's possible to set its log level independently.
 
 It's possible to change the styles of the tag that appears before the log. To do that, pass a function as the third parameter: it receives the `moduleName` as an input and should output the desired styled tag.
 
@@ -123,7 +123,7 @@ A numeric [`enum`](https://www.typescriptlang.org/docs/handbook/enums.html) with
 
 ### log(logLevel, message)
 
-A [`logger`](<(#loggerlogtype-message)>) with no _scope_ applied. You should use this one as a global logger.
+A [`logger`](#loggerloglevel-message) with no _scope_ applied. You should use this one as a global logger.
 
 ## License
 
