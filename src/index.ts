@@ -107,4 +107,4 @@ export const createLogger = (
 
 export const log = createLogger('', LOG_LEVEL.INFO)
 
-export default log
+export default createLogger
