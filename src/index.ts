@@ -63,8 +63,8 @@ const logTypes = new Map<
     'verbose',
     {
       level: LOG_LEVEL.VERBOSE,
-      prefix: `${kleur.bgWhite().black(pad('verbose'))}${' '.repeat(5)}`,
-      format: kleur.dim,
+      prefix: `${kleur.bgMagenta().grey(pad('verbose'))}${' '.repeat(5)}`,
+      format: kleur.magenta,
     },
   ],
   [
@@ -72,7 +72,7 @@ const logTypes = new Map<
     {
       level: LOG_LEVEL.DEBUG,
       prefix: `${kleur.bgBlue().white(pad('debug'))}${' '.repeat(7)}`,
-      format: kleur.dim().blue,
+      format: kleur.blue,
     },
   ],
 ])
